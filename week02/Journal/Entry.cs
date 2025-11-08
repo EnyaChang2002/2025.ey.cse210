@@ -6,8 +6,8 @@ public class Entry
 
     public string Display()
     {
-        string entry = _date + " " + _promptText + " " + _entryText;
-        Console.WrtieLine(entry);
-        return entry;
+        string _text = _date + " " + _promptText + " " + _entryText;
+        Console.WrtieLine(_text);
+        return _text;
     }
 }

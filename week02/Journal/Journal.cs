@@ -5,19 +5,24 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-        _entries.add(newEntry);
-
+        if (IsNullOrWhiteSpace(Console.WriteLine()))
+        {
+            break;
+        } else
+        {
+            _entries.add(newEntry);
+        }
     }
 
     public void DisplayEntries()
     {
         for (int i = 0; i < _entries.Count; i++)
         {
-            Console.WriteLine($"{_entries[i].Display()}");
+            Console.WriteLine($"{_entries[i].Display}");
         }
     }
 
-    public void SavingFiles(string _filename, Entry entries)
+    public void SavingFiles(string _filename)
     {
 
         bool enter = true;
@@ -27,9 +32,9 @@ public class Journal
         }
         using (StreamWriter outputFile = new StreamWriter(_filename))
         {
-            foreach(Entry entry in entries)
+            foreach(Entry entry in _entries)
             {
-                outputFile.WriteLine(entry.Display());
+                outputFile.WriteLine(entry._text);
             }
         }
         

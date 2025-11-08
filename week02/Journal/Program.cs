@@ -10,11 +10,14 @@ class Program
             string choices = "";
             Console.WriteLine("Please select one of the following choices: ");
             Console.WriteLine("1. Wrtie");
-            Console.WrtieLine("2. Display");
+            Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             Console.WriteLine("What would you like to do? ");
+            choices = Console.ReadLine();
+
+            Journal _newJ = new Journal();
 
             if (choices == "1")
             {
@@ -26,9 +29,9 @@ class Program
                 Console.WriteLine(_newEntry._promptText);
 
                 _newEntry._date = _theCurrentTime.ToShortDateString();
-                _newEntry._entryText = Console.WriteLine();
-
-                Journal.AddEntry();
+                _newEntry._entryText = Console.ReadLine();
+    
+                _newJ.AddEntry();
 
             }
             else if (choices == "2")
@@ -42,7 +45,7 @@ class Program
             else if (choices == "4")
             {
                 string files = Console.ReadLine();
-                Journal.SavingFiles();
+                Journal.SavingFiles(files);
             }
             else if (choices == "5")
             {
